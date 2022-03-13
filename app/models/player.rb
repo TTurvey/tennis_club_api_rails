@@ -3,7 +3,6 @@ class Player < ApplicationRecord
   after_initialize :set_defaults, unless: :persisted?
 
   validates_presence_of :first_name, :last_name, :nationality, :date_of_birth
-  # validates_uniqueness_of :first_name, scope: :last_name
   validate :age_restriction
 
   scope :filter_by_nationality, -> (nationality) { where(nationality: nationality) }
