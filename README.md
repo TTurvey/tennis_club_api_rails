@@ -8,10 +8,9 @@
 5. [Useful commands](#usefulcommands)
 6. [Databases](#databases)
 7. [Test Suites](#testsuites)
-8. [Deployment](#testsuites)
-9. [Requirements met](#requirementsmet)
-10. [Design](#design)
-11. [Future Development](#futuredevelopment)
+8. [Requirements met](#requirementsmet)
+9. [Design](#design)
+10. [Future Development](#futuredevelopment)
 
 ---
 &nbsp;
@@ -143,6 +142,8 @@ psql
 ```
 
 &nbsp;
+
+<a name="testsuites"></a>
 
 ## Test suites  
 I have used RSpec to test some of the Player model. All RSpec tests can be run with `bundle exec rspec`.  
