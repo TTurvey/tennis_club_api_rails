@@ -9,7 +9,7 @@ class Player < ApplicationRecord
   scope :filter_by_rank_name, -> (rank_name) { where(rank_name: rank_name) }
   # scope :desc, order("players.points DESC")
 
-  DEFAULT_POINTS = 2999
+  DEFAULT_POINTS = 1200
 
   def set_defaults
     self.points = DEFAULT_POINTS

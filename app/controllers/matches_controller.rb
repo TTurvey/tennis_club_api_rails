@@ -46,9 +46,9 @@ class MatchesController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    def match_params
-      params.require(:match).permit(winner_id:, loser_id:)
-    end
+    # def match_params
+    #   params.require(:match).permit(winner_id:, loser_id:)
+    # end
 end
 
 
