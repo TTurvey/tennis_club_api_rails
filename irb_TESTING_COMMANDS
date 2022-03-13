@@ -1,0 +1,9 @@
+player1 = Player.create(first_name: 'T', last_name: 'T', nationality: 'British', date_of_birth: '01/01/2000')
+
+player2 = Player.create(first_name: 'J', last_name: 'T', nationality: 'British', date_of_birth: '01/01/2000')
+
+match1 = Match.create(winner_id: '1',loser_id: '2')
+match1.results(winner_id: '1',loser_id: '2')
+
+match1.winner.points
+match1.loser.points

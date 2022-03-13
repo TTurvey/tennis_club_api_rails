@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  first_name: 'Roger'
+  last_name: 'Federer'
+  nationality: 'Swiss'
+  date_of_birth: '08/08/1981'
+  
+
+two:
+  id: 2
+  first_name: 'Rafael'
+  last_name: 'Nadal'
+  nationality: 'Spanish'
+  date_of_birth: '03/06/1986'
