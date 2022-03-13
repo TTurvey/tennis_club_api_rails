@@ -23,5 +23,7 @@ class Match < ApplicationRecord
 
     Player.update_rank_name(player_id: winner.id)
     Player.update_rank_name(player_id: loser.id)
+
+    Player.update_current_positions
   end
 end

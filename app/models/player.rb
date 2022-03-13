@@ -50,4 +50,29 @@ class Player < ApplicationRecord
     end
   end
 
+  def self.update_current_positions
+    ranked_players = ActiveRecord::Base.connection.execute("SELECT * FROM players WHERE NOT rank_name = 'Unranked'")
+    ranked_players.each do |player|
+      new_position = Player.where("points > ?", player['points']).where.not(rank_name: 'Unranked').count + 1
+      ActiveRecord::Base.connection.execute("UPDATE players SET current_position = '#{new_position}' WHERE id = '#{player['id']}'")
+    end
+
+    # RANK() OVER (ORDER BY totals DESC) AS xRank
+    
+    # ranked_players = ActiveRecord::Base.connection.execute("SELECT * FROM players WHERE NOT rank_name = 'Unranked'")
+    # unranked_players = ActiveRecord::Base.connection.execute("SELECT * FROM players WHERE rank_name = 'Unranked'")
+    # if unranked_player.valid?
+      # ranked_players + unranked_players
+    # else 
+    #   puts ranked_players
+    #   puts unranked_players[0]
+    # # ranked_players + unranked_players
+    # end
+    
+    # @ranked_players = @players.where.not(rank_name: 'Unranked').order(points: :desc)
+    # @unranked_players = @players.where(rank_name: 'Unranked').order(points: :desc)
+    # @ordered_list = @ranked_players + @unranked_players
+
+  end
+
 end

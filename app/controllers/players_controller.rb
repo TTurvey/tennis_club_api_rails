@@ -3,16 +3,13 @@ class PlayersController < ApplicationController
 
   # GET /players
   def index
-    @players = Player.all 
-    # (:order => rank_name: DESC, points: DESC, )
-
-    [:nationality, :rank_name].each do |filter|
-      players = players.send(filter, params[filter]) if params[filter]
-    end
+    @players = Player.all
 
     filtering_params(params).each do |key, value|
       @players = @players.public_send("filter_by_#{key}", value) if value.present?
     end
+
+    @players = @players.order(current_position: :asc)
 
     render json: @players
   end
