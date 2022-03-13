@@ -110,10 +110,10 @@ Start the server with either `rails s` or `rails server`.
 Enter either `rails c` or `rails console` in the terminal to open the irb environment.  
 In irb you can enter the following commands:  
 ``` ruby
-# Create a player
+# Create a player. Date of birth should be dd/mm/yy format for age restriction to work.
 Player.create(first_name: '', last_name: '', nationality: '', date_of_birth: '')
 
-# Create another player
+# Create another player with a different name.
 Player.create(first_name: '', last_name: '', nationality: '', date_of_birth: '')
 
 # At least two players have to have been created to create a match.

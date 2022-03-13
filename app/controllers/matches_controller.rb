@@ -50,6 +50,3 @@ class MatchesController < ApplicationController
     #   params.require(:match).permit(winner_id:, loser_id:)
     # end
 end
-
-
-

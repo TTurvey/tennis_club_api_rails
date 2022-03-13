@@ -7,7 +7,6 @@ class Player < ApplicationRecord
 
   scope :filter_by_nationality, -> (nationality) { where(nationality: nationality) }
   scope :filter_by_rank_name, -> (rank_name) { where(rank_name: rank_name) }
-  # scope :desc, order("players.points DESC")
 
   DEFAULT_POINTS = 1200
 
@@ -55,23 +54,5 @@ class Player < ApplicationRecord
       new_position = Player.where("points > ?", player['points']).where.not(rank_name: 'Unranked').count + 1
       ActiveRecord::Base.connection.execute("UPDATE players SET current_position = '#{new_position}' WHERE id = '#{player['id']}'")
     end
-
-    # RANK() OVER (ORDER BY totals DESC) AS xRank
-    
-    # ranked_players = ActiveRecord::Base.connection.execute("SELECT * FROM players WHERE NOT rank_name = 'Unranked'")
-    # unranked_players = ActiveRecord::Base.connection.execute("SELECT * FROM players WHERE rank_name = 'Unranked'")
-    # if unranked_player.valid?
-      # ranked_players + unranked_players
-    # else 
-    #   puts ranked_players
-    #   puts unranked_players[0]
-    # # ranked_players + unranked_players
-    # end
-    
-    # @ranked_players = @players.where.not(rank_name: 'Unranked').order(points: :desc)
-    # @unranked_players = @players.where(rank_name: 'Unranked').order(points: :desc)
-    # @ordered_list = @ranked_players + @unranked_players
-
   end
-
 end
