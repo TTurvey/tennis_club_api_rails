@@ -75,7 +75,7 @@ RSpec
 Clone this repository to your local.  
 Install dependencies within the Gemfile, `bundle install`.  
 Start the server, `rails s`.
-Navigate to http://localhost:5000/ in your browser.
+Navigate to http://localhost:3000/ in your browser.
 
 &nbsp;
 
@@ -83,7 +83,7 @@ Navigate to http://localhost:5000/ in your browser.
 
 ## URL parameters  
 Index - List of all players ordered in descending points/position with unranked players at the bottom.  
-http://localhost:5000/players
+http://localhost:3000/players
 
 For a list of all matches played visit:
 http://localhost:3000/matches  
