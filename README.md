@@ -155,9 +155,9 @@ I have used the built-in testing framework that comes with the Rails library to 
 
 ## Requirements met
 - Required player creation params being first_name, last_name, nationality and date_of_birth. ✅  
-  - See create players table migration file.
-- Unique player full names (first name + last name). ✅  
   - See player model and controller for validation of params.
+- Unique player full names (first name + last name). ✅  
+  - See create players table migration file.
 - Player creation age restriction (not younger than 16yrs old). ✅
   - Age restriction method added to the player model.
 - Players have initial points of 1200. ✅
