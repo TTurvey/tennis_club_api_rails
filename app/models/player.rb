@@ -34,7 +34,7 @@ class Player < ApplicationRecord
   def self.update_rank_name(player_id:)
     player = ActiveRecord::Base.connection.execute("SELECT * FROM players WHERE id = '#{player_id}'")
 
-    # rank_name won't change from 'Unranked' until mactch_count is 3 or more.
+    # rank_name won't change from 'Unranked' until match_count is 3 or more.
     if player[0]['match_count'] < 3
       ActiveRecord::Base.connection.execute("UPDATE players SET rank_name = 'Unranked' WHERE id = '#{player_id}'")
     elsif player[0]['points'].between?(0, 2999)

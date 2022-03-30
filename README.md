@@ -141,6 +141,28 @@ psql
 # You can now enter SQL commands
 ```
 
+To reset the databases use the below commands:
+```
+$ Connect to psql by typing it into the terminal.
+
+psql
+
+# Run the following commands in psql.
+
+SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'tennis_club_api2_development' AND pid <> pg_backend_pid();
+
+SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'tennis_club_api2_test' AND pid <> pg_backend_pid();
+
+DROP DATABASE IF EXISTS tennis_club_api2_development;
+DROP DATABASE IF EXISTS tennis_club_api2_test;
+
+
+# Quit out of psql back to the terminal.
+\q
+
+rails db:drop db:create db:migrate
+```
+
 &nbsp;
 
 <a name="testsuites"></a>
